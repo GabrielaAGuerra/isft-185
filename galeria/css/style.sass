@@ -1,0 +1,82 @@
+:root
+    --bg: #292929
+    --fb: #1877f2   
+    --yt: #E00000
+    --tw: #1da1f2
+    --ig: #833ab4
+    --ws: #128c7e
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body
+    background-color: var(--bg)
+
+main
+    display: flex
+    justify-content: center
+    align-items: center
+    min-height: 100vh
+    ul
+        position: relative
+        display: flex
+        gap: 50px  // para que funcione solo necesito el display: flex
+        li
+            list-style: none
+            position: relative
+            width: 80px
+            height: 80px
+            display: flex
+            justify-content: center
+            align-items: center //con estos centramos los íconos
+            cursor: pointer
+            transition: .5s
+            &:hover
+                z-index: 2 //Mayor valor estará más arriba
+                transform: scale(.75) //Achicamos el tamaño del contenedor
+                a
+                    font-size: 3em
+                    filter: drop-shadow(0 0 20px var(--clr)) drop-shadow(0 0 40px var(--clr)) drop-shadow(0 0 60px var(--clr))
+                &::before 
+                    inset: 0px
+            &::before     
+                content: ''
+                position: absolute
+                //inset: 0   //Para pruebas
+                inset: 30px
+                transition: .5s
+                //box-shadow: 0 0 0 10px var(--clr), 0 0 0 20px var(--bg),0 0 0 22px var(--fb)//no está tomando el box-shadow desde la variable, tampoco en el child, pero si toma la variable declarada en el sass
+            &::after
+                content: ''
+                position: absolute
+                inset: 0
+                transform: rotate(45deg)
+                background: var(--bg)
+            a
+                position: relative
+                text-decoration: none
+                color: var(--clr)
+                z-index: 1
+                font-size: 2em
+                transition: .5s
+            &:nth-child(1)
+                &::before 
+                    box-shadow: 0 0 0 10px var(--fb), 0 0 0 20px var(--bg), 0 0 0 22px var(--fb)                
+            &:nth-child(2)
+                &::before 
+                    box-shadow: 0 0 0 10px var(--yt), 0 0 0 20px var(--bg), 0 0 0 22px var(--yt)                
+            &:nth-child(3)
+                &::before 
+                    box-shadow: 0 0 0 10px var(--tw), 0 0 0 20px var(--bg), 0 0 0 22px var(--tw)                
+            &:nth-child(4)
+                &::before 
+                    box-shadow: 0 0 0 10px var(--ig), 0 0 0 20px var(--bg), 0 0 0 22px var(--ig)                
+            &:nth-child(5)
+                &::before 
+                    box-shadow: 0 0 0 10px var(--ws), 0 0 0 20px var(--bg), 0 0 0 22px var(--ws)                
+
+@media (max-width: 767px)    
+    ul
+        flex-direction: column

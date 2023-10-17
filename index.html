@@ -23,9 +23,142 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <style>
+            .header{
+             margin-left: 130px;
+             position: fixed;
+             bottom: 50px;
+             left: 50%;
+             transform: translateX(-50%);
+             z-index: 100000;
+             width: 590px;
+             height: 70px;
+             background: #232323;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             border-radius: 10px;
+             filter: drop-shadow(0 15px 35px rgb(0, 0, 0, 0.5));
+         
+         }
+         .header nav a .icon{
+             position: relative;
+             display: block ;
+             line-height: 50px;
+             font-size: 1.95em;
+             text-align: center;
+             transition: 0.5s;
+             color: #666;
+         }
+         /*activa el icono en color*/
+         header nav a.active .icon{
+             transform: translateY(-38px);
+             color: var(--clr);
+         }
+         
+         .header nav a .text{
+         
+             position: absolute;
+             color: #232323;
+             padding: 6px 10px;
+             border-radius: 18px;
+             font-weight: 300px;
+             font-size: 0.95em;
+             letter-spacing: 0.09em;
+             transition: 0.5s;
+             transform: translateY(10px);
+         }
+         
+         .header nav a.active .text{
+             transform: translateY(-9px);
+             background: var(--clr);
+             opacity: 1;
+         }
+         
+         .indicator{
+             position: absolute;
+             top: -35px;/*el circulo sobor el icono*/
+             width: 30px;
+             height: 40px;
+             background-color: #f5efef;
+             border-radius: 50%;
+             transition: 0.8s;
+             z-index: 1;
+         
+         }
+         .indicator::before{
+             content: '';
+             position: absolute;
+             top: 5px;
+             left: -28px;
+             width: 20px;
+             height: 200px;
+             border-radius: 50%;
+             background: transparent;
+             box-shadow: 15px 18px #232323;
+         
+         }
+         
+         .indicator::after{
+             content: '';
+             position: absolute;
+             top: 5px;
+             right: -28px;
+             width: 30px;
+             height: 30px;
+             border-radius: 50%;
+             background: transparent;
+             box-shadow: -15px 18px #232323;
+         
+         }
+         
+         /*hace mover el circulo cuando se selcciona*/
+         header nav a:nth-child(1).active ~ .indicator{
+             transform: translateX(calc(70px * 0));
+         }
+         header nav a:nth-child(2).active ~ .indicator{
+             transform: translateX(calc(70px * 1));
+         }
+         header nav a:nth-child(3).active ~ .indicator{
+             transform: translateX(calc(70px * 2));
+         }
+         header nav a:nth-child(4).active ~ .indicator{
+             transform: translateX(calc(70px * 3));
+         }
+         header nav a:nth-child(5).active ~ .indicator{
+             transform: translateX(calc(70px * 4));
+         }
+         
+                 </style>
     </head>
 
 <body>
+    <div class="header">
+     
+        <a href="comunicacion.html" style="--clr:#9521f3;color: white;">
+            <span><img src="img/icon-1.png" width="40px" height="40px"></span>
+            <span class="text">  Com. Multimedial </span>
+        </a>
+        <br>
+
+        <a href="mectronica.html" style="--clr:#d6b627;color: white;">
+            <span class="icon"><img src="img/icon-2.png" width="40px" height="40px"></span>
+            <span class="text">  Mecatrónica </span>
+        </a>
+        <br>
+
+        <a href="mecanica.html" style="--clr:#be1818;color: white;">
+            <span class="icon"><img src="img/icon-3.png" width="40px" height="40px"></span>
+            <span class="text">  Mecanica Automotriz </span>
+        </a>
+        <br>
+
+        <a href="energias.html" style="--clr:#1e8315;color: white;">
+            <span class="icon"><img src="img/icon-4.png" width="40px" height="40px"></span>
+            <span class="text">  Energía Renovable </span>
+        </a>
+    </div>
+    <div class="indicator"></div>
 
 
 
@@ -142,7 +275,7 @@
                           <h1>Abiertas las <br>inscripciones</h1>
                           
                           <div class="white-button button">
-                              <a href="inscripcion/FORMULARIO DE INSCRIPCION.pdf">Imprimir Formulario</a>
+                              <a href="inscripcion/Planilla_Inscripcion.pdf">Imprimir Formulario</a>
                           </div>
                         </div>
                         </div>
@@ -191,7 +324,7 @@
                 <div class="section-heading">
                     <h1>Nuestras<br><em>Carreras</em></h1>
                 <p >En nuestro Instituto, aspiramos que todos los alumnos, que tengan vocación e intenciones de mejorar sus condiciones laborales y deseos de superación personal, encuentren un espacio de formación profesional que favorezca sus objetivos y un grupo de docentes que los acompañe en su trayectoria académica para formalizarlos.</p>
-                     <br> <br> <br> <br><br> <br>
+                    <br> <br> <br> <br><br> <br>
                 </div>
                 <div class="section-content">
                     <div class="owl-carousel owl-theme">
